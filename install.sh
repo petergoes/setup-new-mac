@@ -35,6 +35,7 @@ brew install pinentry-mac
 brew install deno
 brew install nvm
 brew install vim
+nvm install node
 
 # Tools
 brew install exa
