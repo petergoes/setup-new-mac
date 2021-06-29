@@ -60,6 +60,7 @@ brew install --cask google-chrome-canary
 brew install --cask microsoft-edge
 
 # Productivity
+brew install --cask affinity-photo
 brew install --cask alfred
 brew install --cask bettertouchtool
 brew install --cask busycal
