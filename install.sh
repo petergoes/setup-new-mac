@@ -66,6 +66,7 @@ brew install --cask iterm2
 brew install --cask kaleidoscope
 brew install --cask runjs
 brew install --cask visual-studio-code
+brew install --cask docker
 
 # Chat and messaging
 brew install --cask discord
