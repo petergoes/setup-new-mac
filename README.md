@@ -10,7 +10,7 @@ It will install [Homebrew](https://brew.sh) first and then use that to install v
 ⚠️ Please review the script before running it. ⚠️
 
 ```bash
-sh -c "$(curl -fsSL https://raw.github.com/petergoes/setup-new-mac/main/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/petergoes/setup-new-mac/main/install.sh)"
 ```
 
   
