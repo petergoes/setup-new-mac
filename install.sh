@@ -61,12 +61,13 @@ brew install --cask microsoft-edge
 brew install --cask alfred
 brew install --cask bettertouchtool
 brew install --cask busycal
+brew install --cask docker
 brew install --cask gitify
 brew install --cask iterm2
 brew install --cask kaleidoscope
 brew install --cask runjs
+brew install --cask virtualbox
 brew install --cask visual-studio-code
-brew install --cask docker
 
 # Chat and messaging
 brew install --cask discord
