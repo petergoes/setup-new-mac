@@ -10,6 +10,7 @@ brew install curl
 brew install libyaml
 brew install openssl
 brew install wget
+brew install bat
 
 # Oh my zsh
 brew install zsh
@@ -65,6 +66,7 @@ brew install --cask affinity-photo
 brew install --cask alfred
 brew install --cask bettertouchtool
 brew install --cask busycal
+brew install --cask clipy
 brew install --cask docker
 brew install --cask gitify
 brew install --cask iterm2
