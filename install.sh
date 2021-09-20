@@ -90,3 +90,4 @@ brew install --cask spotify
 
 # Other
 brew install --cask font-fira-code
+brew install --cask processing
