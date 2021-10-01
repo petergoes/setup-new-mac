@@ -48,6 +48,7 @@ brew install thefuck
 brew install tldr
 brew install tree
 brew install watchman
+brew install bluesnooze
 
 # Passwords
 brew install --cask 1password
