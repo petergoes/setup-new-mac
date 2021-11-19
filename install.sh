@@ -49,6 +49,7 @@ brew install tldr
 brew install tree
 brew install watchman
 brew install bluesnooze
+brew install fig
 
 # Passwords
 brew install --cask 1password
@@ -76,6 +77,7 @@ brew install --cask postman
 brew install --cask runjs
 brew install --cask virtualbox
 brew install --cask visual-studio-code
+brew install --cask libreoffice
 
 # Chat and messaging
 brew install --cask discord
