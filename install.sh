@@ -12,11 +12,15 @@ brew install openssl
 brew install wget
 brew install bat
 
-# Oh my zsh
 brew install zsh
 brew install zsh-completions
 brew install zsh-syntax-highlighting
-curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+
+# Oh my zsh (Disabled Oh My Zsh to try out starship)
+# curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+
+# Starship
+brew install starship
 
 # Git and friends
 brew install git
