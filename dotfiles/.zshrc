@@ -7,7 +7,8 @@
 eval "$(starship init zsh)"
 
 # Add syntax highlighting for commands (https://github.com/zsh-users/zsh-syntax-highlighting)
-source #{HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+local HOMEBREW_PREFIX="$(brew shellenv | grep HOMEBREW_PREFIX | awk '{print $2}' FS='"')"
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
