@@ -1,0 +1,13 @@
+[include]
+  path = ~/dotfiles/dotfiles/git/alias
+  path = ~/dotfiles/dotfiles/git/color
+  path = ~/dotfiles/dotfiles/git/commit
+  path = ~/dotfiles/dotfiles/git/core
+  path = ~/dotfiles/dotfiles/git/credential
+  path = ~/dotfiles/dotfiles/git/diff
+  path = ~/dotfiles/dotfiles/git/init
+  path = ~/dotfiles/dotfiles/git/interactive
+  path = ~/dotfiles/dotfiles/git/pager
+  path = ~/dotfiles/dotfiles/git/push
+  path = ~/dotfiles/dotfiles/git/sequence
+  path = ~/dotfiles/dotfiles/git/user

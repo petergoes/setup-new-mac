@@ -1,0 +1,12 @@
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = auto
+  pager = true
+
+[color "status"]
+  added = green
+  changed = red
+  untracked = cyan

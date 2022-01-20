@@ -1,0 +1,8 @@
+[alias]
+  st = status -S
+  co = checkout
+  lg = log --oneline --graph --decorate
+  lga = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%C(auto)%d %Creset%s' --graph --date=short --all
+  lgaw =  "!sh -c 'watch -c -t git -c color.diff=always lga'"
+  cm = commit
+  ca = commit --amend
