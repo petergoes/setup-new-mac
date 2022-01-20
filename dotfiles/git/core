@@ -1,4 +1,4 @@
 [core]
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/dotfiles/dotfiles/git/.gitignore_global
   editor = /usr/bin/vim
   pager = less -S
