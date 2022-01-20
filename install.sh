@@ -78,6 +78,7 @@ brew install --cask runjs
 brew install --cask virtualbox
 brew install --cask visual-studio-code
 brew install --cask libreoffice
+brew install --cask todoist
 
 # Chat and messaging
 brew install --cask discord
