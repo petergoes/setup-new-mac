@@ -1,0 +1,73 @@
+#!/bin/bash
+# Do a pull on all branches that are tracking a remote branches, will from origin by default.
+# If current branch is dirty, will stash changes and reply after pull.
+# Usage: git pullall [remoteName]
+
+YELLOW='\033[0;33m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+# if -h then show help
+if [[ $1 == '-h' ]]
+then
+  echo "Description: Pulls new changes from upstream on all branches that are tracking remotes."
+  echo 
+  echo "Usage: "
+  echo "- Default: pullall"
+  echo "- Specify upstream to pull from: pullall [upstreamName]"
+  echo "- Help: pull-all -h"
+else
+
+ # default remote to origin
+ remote="origin"
+ if [[ $1 != "" ]]
+ then
+   remote=$1
+ fi
+
+ echo -e "Remote: ${YELLOW}$remote${NC}"
+ echo ""
+
+ # list all branches that are tracking remote
+ # git branch -vv : list branches with their upstreams
+ # grep origin : keep only items that have upstream of origin
+ # sed "s/^.."... : remove leading *
+ # sed "s/^"..... : remove leading white spaces
+ # cut -d" "..... : cut on spaces, take first item
+ # cut -d splits on space, -f1 grabs first item
+ branches=($(git branch -vv | grep $remote | sed "s/^[ *]*//" | sed "s/^[ *]*//" | cut -d" " -f1))
+ 
+ # get starting branch name
+ startingBranch=$(git rev-parse --abbrev-ref HEAD)
+
+ # get starting stash size
+ startingStashSize=$(git stash list | wc -l)
+
+ echo -e "Saving starting branch state: ${GREEN}$startingBranch${NC}"
+ git stash
+
+ # get the new stash size
+ newStashSize=$(git stash list | wc -l)
+
+ # for each branch in the array of remote tracking branches
+ for branch in ${branches[*]}
+ do
+   echo ""
+   echo -e "Switching to ${YELLOW}$branch${NC}"
+   git checkout $branch -q
+   git pull $remote
+
+ done
+
+ echo ""
+
+ echo -e "Switching back to ${GREEN}$startingBranch${NC}"
+ git checkout $startingBranch -q
+
+ # compare before and after stash size to see if anything was stashed
+ if [ "$startingStashSize" -lt "$newStashSize" ]
+ then
+   echo "Restoring branch state"
+   git stash pop
+ fi
+fi

@@ -1,0 +1,68 @@
+#!/bin/bash
+
+if [[ $1 == '-h' ]]
+then
+	echo
+	echo "Pulls new changes from upstream branch without merging into the current branch."
+	echo
+	echo "Usage:"
+	echo "- $ git pull-on [remote] target-branch"
+	echo "- $ git pull-on -h"
+	echo 
+	exit 0
+fi
+
+# default remote origin
+remote="origin"
+if [[ $2 != "" ]]
+then
+	remote=$1
+fi
+
+# branch to pull
+target=$1
+if [[ $2 != "" ]]
+then
+	target=$2
+fi
+
+if [[ -z "$1" ]]
+then
+	echo "Provide branch to pull"
+	exit 1
+fi
+
+# get current branch name
+startingBranch=$(git rev-parse --abbrev-ref HEAD)
+
+# get starting stash size
+startingStashSize=$(git stash list | wc -l)
+
+# save current state
+git stash -u
+
+# get the new stash size
+newStashSize=$(git stash list | wc -l)
+
+echo ""
+echo "Currently on branch: $(tput setaf 6)$startingBranch$(tput sgr0)"
+echo "Switching to: $(tput setaf 3)$target$(tput sgr0)"
+git checkout $target -q
+
+echo ""
+echo "$(tput setaf 2)Start pull$(tput sgr0)"
+git pull $remote $target
+echo "$(tput setaf 2)Pull completed$(tput sgr0)"
+
+echo ""
+echo "Switch back to: $(tput setaf 3)$startingBranch$(tput sgr0)"
+git checkout $startingBranch -q
+
+if [ "$startingStashSize" -lt "$newStashSize" ]
+then
+	echo ""
+	echo "Pop saved stash to restore index"
+	git stash pop
+fi
+
+

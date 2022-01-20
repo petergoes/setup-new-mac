@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Pruning local branches:";
+
+# Prune from origin
+git fetch --prune;
+
+# Remove merged branches
+git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d
+
+# If there are unmerged branches left, ask if they should be force deleted as well
+git branch -r |
+	awk '{print $1}' | 
+	egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) |
+	awk '{print $1}' |
+	xargs -p -n 1 git branch -D

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+git remote -v | \
+grep push | \
+awk '{print $1}' | \
+xargs git remote get-url --push | \
+sed 's/^git@github.com://' | \
+sed 's/.git$//'

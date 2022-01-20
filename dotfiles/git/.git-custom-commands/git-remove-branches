@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ $1 = '-h' ]
+then
+	echo "usage: git removebranches [--force]"
+	exit 0
+fi
+
+
+
+CURRENT=$(git branch --show-current)
+clear
+echo "$(tput setaf 2)Remove local branches.$(tput sgr0)";
+echo "Your current branch: $(tput setaf 3)$CURRENT$(tput sgr0)"
+echo ""
+
+# Remove merged branches
+if [[ $1 = '--force' ]]
+then
+	echo "Using $(tput setaf 1)--force$(tput sgr0)"
+	echo ""
+	git branch | awk '!/\*|master|main/ {print $1}' | xargs -p -n 1 git branch -D 
+else
+	git branch | awk '!/\*|master|main/ {print $1}' | xargs -p -n 1 git branch -d 
+fi

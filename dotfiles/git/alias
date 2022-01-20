@@ -1,5 +1,5 @@
 [alias]
-  st = status -S
+  st = status -s
   co = checkout
   lg = log --oneline --graph --decorate
   lga = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%C(auto)%d %Creset%s' --graph --date=short --all
