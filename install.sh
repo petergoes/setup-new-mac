@@ -13,10 +13,10 @@ brew install wget
 brew install bat
 
 brew install zsh
-brew install zsh-completions
+# brew install zsh-completions Fig should replace this
 brew install zsh-syntax-highlighting
 
-# Oh my zsh (Disabled Oh My Zsh to try out starship)
+# Oh my zsh (Disabled Oh My Zsh to try out Starship)
 # curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 
 # Starship
