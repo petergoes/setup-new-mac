@@ -12,6 +12,9 @@ source ~/dotfiles/dotfiles/env.zsh
 # Load custom aliases
 source ~/dotfiles/dotfiles/alias.zsh
 
+# Load copied oh-my-zsh plugin jump
+source ~/dotfiles/dotfiles/tools/jump.zsh
+
 # Add syntax highlighting for commands (https://github.com/zsh-users/zsh-syntax-highlighting)
 local HOMEBREW_PREFIX="$(brew shellenv | grep HOMEBREW_PREFIX | awk '{print $2}' FS='"')"
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
