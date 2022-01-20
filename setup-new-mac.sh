@@ -13,11 +13,7 @@ brew install wget
 brew install bat
 
 brew install zsh
-# brew install zsh-completions Fig should replace this
 brew install zsh-syntax-highlighting
-
-# Oh my zsh (Disabled Oh My Zsh to try out Starship)
-# curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 
 # Starship
 brew install starship
@@ -38,9 +34,9 @@ brew install pinentry-mac
 
 # Development environment
 brew install deno
-brew install nvm
+brew install fnm
 brew install vim
-nvm install node
+fnm install --lts
 
 # Tools
 brew install exa
