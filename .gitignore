@@ -1,1 +1,3 @@
 dotfiles/git/user
+node_modules
+build
