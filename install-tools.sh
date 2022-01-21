@@ -1,6 +1,6 @@
 #!/bin/sh
 
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew tap homebrew/cask-fonts    # Contains fira-code
 brew tap homebrew/cask-versions # Contains google-chrome-canary
@@ -36,7 +36,6 @@ brew install pinentry-mac
 brew install deno
 brew install fnm
 brew install vim
-fnm install --lts
 
 # Tools
 brew install exa
