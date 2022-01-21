@@ -1,0 +1,31 @@
+# Inserts a blank line between shell prompts
+add_newline = true 
+
+format = '''
+\[ [MBP](red) \]$username$git_branch$fill$git_status
+[](bright-cyan) '''
+
+[username]
+show_always = true
+style_user = "yellow"
+style_root = "red bold"
+format = "\\[ [$user]($style) \\]"
+
+
+[git_branch]
+format = "\\[ [$branch]($style) \\]"
+truncation_length = 35
+
+
+[git_status]
+format = "(\\[$ahead_behind$modified$deleted$staged$untracked \\])"
+ahead = " [${count}](cyan)"
+diverged = " [](bright-yellow) [${ahead_count}](cyan)[${behind_count}](purple)"
+behind = "[ ${count}](purple)"
+modified = ' [ ($count)](red)'
+staged = ' [落($count)](green)'
+deleted = ' [ ($count)](red)'
+untracked = ' [??($count)](cyan)'
+
+[fill]
+symbol=" "
