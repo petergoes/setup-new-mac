@@ -26,6 +26,7 @@ brew install git-interactive-rebase-tool
 brew install git-lfs
 brew install interactive-rebase-tool
 brew install tig
+brew install git-delta
 
 # Commit signing (https://withblue.ink/2020/05/17/how-and-why-to-sign-git-commits.html)
 brew install gpg
