@@ -1,3 +1,9 @@
 #!/bin/bash
 
 git branch --show-current
+
+if [[ $1 == '--copy' ]]
+then
+  git branch --show-current | pbcopy 
+  echo ' > Copied to clipboard'
+fi	
