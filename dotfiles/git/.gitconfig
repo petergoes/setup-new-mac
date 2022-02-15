@@ -11,3 +11,6 @@
   path = ~/dotfiles/dotfiles/git/push
   path = ~/dotfiles/dotfiles/git/sequence
   path = ~/dotfiles/dotfiles/git/user
+  path = ~/dotfiles/dotfiles/git/delta
+  path = ~/dotfiles/dotfiles/git/lfs
+
