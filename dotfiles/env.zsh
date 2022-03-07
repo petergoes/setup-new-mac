@@ -1,4 +1,5 @@
 export PATH=$PATH:~/dotfiles/dotfiles/git/.git-custom-commands
+export PATH=$PATH:~/dotfiles/dotfiles/bin
 
 export CLICOLOR=1
 export LSCOLORS=bxfxcxdxbxegedabagaced
