@@ -22,6 +22,9 @@ source ~/dotfiles/dotfiles/tools/nvm.zsh
 
 source ~/dotfiles/dotfiles/tools/thefuck.zsh
 
+# Load alias to convert branch name in correct gh pr create
+source ~/dotfiles/dotfiles/tools/ghpr.zsh
+
 # Add syntax highlighting for commands (https://github.com/zsh-users/zsh-syntax-highlighting)
 local HOMEBREW_PREFIX="$(brew shellenv | grep HOMEBREW_PREFIX | awk '{print $2}' FS='"')"
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
