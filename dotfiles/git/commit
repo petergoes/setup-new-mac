@@ -1,2 +1,3 @@
 [commit]
   template = ~/dotfiles/dotfiles/git/.git-commit-template
+  gpgSign = true

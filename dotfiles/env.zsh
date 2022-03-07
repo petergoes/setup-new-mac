@@ -7,3 +7,5 @@ export EDITOR=code
 export BROWSER=google chrome canary
 
 export DOTFILES_DIR=~/dotfiles/dotfiles
+
+export GPG_TTY=$(tty)
