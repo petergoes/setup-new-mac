@@ -1,9 +1,12 @@
 #!/bin/sh
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew analytics off
 
 brew tap homebrew/cask-fonts    # Contains fira-code
 brew tap homebrew/cask-versions # Contains google-chrome-canary
+brew tap koekeishiya/formulae
 
 brew install coreutils
 brew install curl
@@ -11,6 +14,9 @@ brew install libyaml
 brew install openssl
 brew install wget
 brew install bat
+brew install fd
+brew install jq
+brew install fzf
 
 brew install zsh
 brew install zsh-syntax-highlighting
@@ -37,6 +43,7 @@ brew install pinentry-mac
 brew install deno
 brew install fnm
 brew install vim
+brew install neovim
 
 # Tools
 brew install exa
@@ -50,17 +57,20 @@ brew install tree
 brew install watchman
 brew install bluesnooze
 brew install fig
+brew install glow
+brew install skhd
+brew install yabai
 
 # Passwords
 brew install --cask 1password
-brew install --cask bitwarden
 
 # Browsers
-brew install --cask brave-browser
+brew install --cask arc
 brew install --cask firefox
 brew install --cask firefox-developer-edition
 brew install --cask google-chrome-canary
 brew install --cask microsoft-edge
+brew install --cask polypane
 
 # Productivity
 brew install --cask affinity-designer-beta
@@ -77,12 +87,13 @@ brew install --cask postman
 brew install --cask runjs
 brew install --cask virtualbox
 brew install --cask visual-studio-code
-brew install --cask libreoffice
 brew install --cask todoist
+brew install --cask sf-symbols
+brew install --cask android-studio
+brew install --cask figma
 
 # Chat and messaging
 brew install --cask discord
-brew install --cask microsoft-teams
 brew install --cask signal
 brew install --cask slack
 brew install --cask telegram
@@ -95,4 +106,4 @@ brew install --cask spotify
 
 # Other
 brew install --cask font-fira-code
-brew install --cask processing
+brew install --cask font-hack-nerd-font

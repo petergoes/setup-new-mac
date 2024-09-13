@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+const { exec } = require("child_process");
+
+exec('git branch --show-current', (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+    }
+    
+    const [ticketId, ...rest] = stdout.split('--')
+    if (/(\w+)-(\d+)/.test(ticketId)) {
+        exec(`open https://decorrespondent.atlassian.net/browse/${ticketId}`)
+    } else {
+        console.log(`${ticketId} is not a valid ticket id`)
+    }
+})

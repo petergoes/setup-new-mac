@@ -1,0 +1,7 @@
+#!/bin/bash
+
+TITLE="$(git branch --show-current | sed -e 's/\-\-/\: /g' -e 's/\-/ /g' -e 's/\ /\-/1')"
+TICKET_NUMBER="$(echo $TITLE | cut -d: -f1)"
+
+gh pr create --title "$TITLE" --body "$TICKET_NUMBER"
+gh pr edit

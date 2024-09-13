@@ -1,4 +1,4 @@
-alias ls='exa --all --long --color=always --group-directories-first --header'
+alias ls='ls -lgha'
 alias ip="ipconfig getifaddr en0"
 alias https='http --default-scheme=https'
 alias github='gh'

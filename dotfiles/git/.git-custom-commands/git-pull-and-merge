@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [[ $1 == '-h' ]]
+then
+	echo
+	echo "Pulls new changes from upstream branch while merging into the current branch."
+	echo
+	echo "Usage:"
+	echo "- $ git pull-on-and-merge [remote] target-branch"
+	echo "- $ git pull-on-and-merge -h"
+	echo 
+	exit 0
+fi
+
+# default remote origin
+remote="origin"
+if [[ $2 != "" ]]
+then
+	remote=$1
+fi
+
+# branch to pull
+target=$1
+if [[ $2 != "" ]]
+then
+	target=$2
+fi
+
+if [[ -z "$1" ]]
+then
+	echo "Provide branch to pull"
+	exit 1
+fi
+
+git pull-on $remote $target
+
+git merge $target

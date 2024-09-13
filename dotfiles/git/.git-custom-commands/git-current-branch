@@ -1,9 +1,40 @@
 #!/bin/bash
 
-git branch --show-current
+BRANCH=$(git branch --show-current) 
 
-if [[ $1 == '--copy' ]]
+if [[ $1 == '' ]]
 then
-  git branch --show-current | pbcopy 
-  echo ' > Copied to clipboard'
+  echo $BRANCH | tr -d '\n' | pbcopy 
+  echo " > Copied '$BRANCH' to clipboard"
 fi	
+
+if [[ $1 == 'deploy' ]]
+then
+  REPO=''
+
+  if [[ $(pwd) == *"Code/decorrespondent-fe"* ]]; then
+    REPO='frontend'
+  fi
+  if [[ $(pwd) == *"Code/decorrespondent-web"* ]]; then
+    REPO='frontend-legacy'
+  fi
+  if [[ $(pwd) == *"Code/publishers/decorrespondent.nl"* ]]; then
+    REPO='publisher'
+  fi
+  if [[ $(pwd) == *"Code/Respondens"* ]]; then
+    REPO='respondens'
+  fi
+
+  if [[ $2 == 'staging' ]]
+  then
+    ENVIRONMENT=staging
+  fi
+
+  if [[ $2 == 'production' ]]
+  then
+    ENVIRONMENT=staging
+  fi
+
+  echo "@hubot deploy $REPO $BRANCH on $ENVIRONMENT" | pbcopy
+  echo " > Copied '@hubot deploy $REPO $BRANCH on $ENVIRONMENT' to clipboard"
+fi

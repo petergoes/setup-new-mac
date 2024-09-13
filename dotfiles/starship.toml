@@ -1,5 +1,6 @@
 # Inserts a blank line between shell prompts
-add_newline = true 
+add_newline = true
+command_timeout = 1000
 
 format = '''
 \[ [MBP](red) \]$username$git_branch$fill$git_status
@@ -13,7 +14,7 @@ format = "\\[ [$user]($style) \\]"
 
 
 [git_branch]
-format = "\\[ [$branch]($style) \\]"
+format = "\\[ [$branch](bright-cyan) \\]"
 truncation_length = 35
 
 
@@ -28,4 +29,4 @@ deleted = ' [ ($count)](red)'
 untracked = ' [??($count)](cyan)'
 
 [fill]
-symbol=" "
+symbol = " "

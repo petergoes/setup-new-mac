@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [[ $1 == '' ]]; then
+  read -p 'Ticket: ' ticket_input
+else
+  ticket_input=$1
+fi
+
+if [[ "$ticket_input" == '' ]]; then
+  ticket=""
+elif [[ "$ticket_input" =~ ^[0-9] ]]; then
+  ticket="DCD-$ticket_input--"
+else
+  ticket="$ticket_input--"
+fi
+
+
+if [[ $2 == '' ]]; then
+  read -p 'Name: ' name
+else
+  for i in "${@:2}"
+    do name="$name $i"
+  done
+fi
+
+TICKET_NUMBER="$(echo $ticket | tr 'a-z' 'A-Z')"
+BRANCH_NAME="$(echo $name | sed -e 's/ /-/g' | tr 'A-Z' 'a-z')"
+
+
+git checkout -b "$TICKET_NUMBER$BRANCH_NAME"
+

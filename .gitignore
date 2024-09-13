@@ -1,3 +1,4 @@
 dotfiles/git/user
+secrets.zsh
 node_modules
 build
